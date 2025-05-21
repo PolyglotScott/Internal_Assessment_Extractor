@@ -1,4 +1,4 @@
-# internall\_assessment\_extractor
+# Internal\_Assessment\_Extractor
 
 <!-- Project Badges -->
 <p align="center">
