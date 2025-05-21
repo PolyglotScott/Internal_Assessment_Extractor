@@ -70,7 +70,7 @@ This project automates the extraction of assessment questions, answers, and mark
 
 ## Project Structure
 
-internall_assessment_extractor/  
+internal_assessment_extractor/  
 ├── docs/                          # Documentation files (user guides, developer notes, troubleshooting, technical reference)  
 │   ├── developer_notes.md  
 │   ├── technical_reference.md  
@@ -98,7 +98,7 @@ internall_assessment_extractor/
 * **src/utils.py**: Utility functions to support parsing and formatting operations.  
 * **.gitignore**: Configured to ignore sensitive or private input files and environment settings to protect user privacy.  
 * **requirements.txt**: Lists required Python packages (`python-docx`, `pandas`, etc.) for easy environment setup.  
-* **sample_input.docx** (in `input/` folder): An optional placeholder to demonstrate the expected input format (should be kept out of the repository if containing private data).  
+* **sample_input.docx** (in `input/` folder): An optional placeholder to demonstrate the expected input format (should be kept out of the repository if it contains private data).  
 
 ---
 
@@ -114,7 +114,7 @@ internall_assessment_extractor/
 Clone the repository:
 
 `git clone https://github.com/PolyglotScott/internal_assessment_extractor.git`
-`cd internall_assessment_extractor`
+`cd internal_assessment_extractor`
 
 Create a virtual environment (optional but recommended):
 
@@ -192,4 +192,4 @@ Email: [scott.maxwell.polyglot@gmail.com](mailto:scott.maxwell.polyglot@gmail.co
 
 ---
 
-*Thank you for checking out internall\_assessment\_extractor! Feel free to explore, use, and contribute.*
+*Thank you for checking out internal\_assessment\_extractor! Feel free to explore, use, and contribute.*
