@@ -1,0 +1,34 @@
+# Ignore folders containing real input and output data
+# These folders may contain sensitive or large files not suitable for version control
+input/
+output/
+
+# Ignore all Microsoft Word documents by default to protect private data
+# But explicitly keep important templates and sample output DOCX files for reference
+*.docx
+!templates/assessment_template.docx
+!sample_outputs/sample_export.docx
+
+# Python cache files - compiled bytecode
+__pycache__/
+*.pyc
+
+# Environment and configuration files that may contain secrets or local settings
+# Uncomment or add as needed if you have such files
+# *.env
+# *.ini
+# *.json
+# *.yml
+
+# IDE and editor folders or files (uncomment as needed)
+# .vscode/
+# *.log
+
+# Operating system files to ignore
+.DS_Store       # macOS Finder metadata files
+Thumbs.db       # Windows thumbnail cache files
+
+# Ignore Python virtual environments if named "venv" or similar
+# Uncomment if you use virtual environments inside the repo folder
+# venv/
+# env/

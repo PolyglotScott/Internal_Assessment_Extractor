@@ -1,0 +1,231 @@
+[MAIN]
+
+# Analyse import fallback blocks for Python 2 and 3 compatibility.
+analyse-fallback-blocks=no
+
+# Clear in-memory caches upon conclusion of linting (useful in server mode).
+clear-cache-post-run=no
+
+# Load and enable all available extensions (commented out, enable if needed).
+# enable-all-extensions=
+
+# In error mode, only ERROR or FATAL messages are shown.
+# errors-only=
+
+# Always return 0 exit code (mostly for CI).
+# exit-zero=
+
+# Comma-separated list of packages where C extensions can be loaded.
+extension-pkg-allow-list=
+
+# Alternative name for extension-pkg-allow-list (backward compatibility).
+extension-pkg-whitelist=
+
+# Messages that trigger a non-zero exit code regardless of score.
+fail-on=
+
+# Score threshold to exit with error.
+fail-under=10
+
+# Files or directories to be skipped (base names).
+ignore=CVS,__pycache__,.DS_Store
+
+# Regex to ignore certain paths (relative or absolute).
+ignore-paths=
+
+# Regex matching base names to skip.
+ignore-patterns=^\.#
+
+# Modules for which member attributes are not checked.
+ignored-modules=
+
+# Python code to execute before linting (e.g., sys.path changes).
+# init-hook=
+
+# Use multiple processes to speed up linting. 0 = auto-detect CPU count.
+jobs=0
+
+# Limit of inferred values when inferring single objects.
+limit-inference-results=100
+
+# Plugins to load.
+load-plugins=
+
+# Pickle data for later comparisons.
+persistent=yes
+
+# Prefer .pyi stubs for imports if available.
+prefer-stubs=yes
+
+# Python version to check against.
+py-version=3.12
+
+# Discover modules/packages recursively.
+recursive=no
+
+# Additional source roots for namespace packages.
+source-roots=
+
+# Emit hints for common misconfigurations.
+suggestion-mode=yes
+
+# Allow loading arbitrary C extensions (security risk).
+unsafe-load-any-extension=no
+
+# Verbose mode.
+# verbose=
+
+
+[BASIC]
+
+# Naming styles for arguments, attributes, variables, functions, methods.
+argument-naming-style=snake_case
+attr-naming-style=snake_case
+variable-naming-style=snake_case
+function-naming-style=snake_case
+method-naming-style=snake_case
+module-naming-style=snake_case
+class-naming-style=PascalCase
+class-const-naming-style=UPPER_CASE
+const-naming-style=UPPER_CASE
+
+# Bad variable names to refuse.
+bad-names=foo,bar,baz,toto,tutu,tata
+
+# Good variable names to always accept.
+good-names=i,j,k,ex,run,_
+
+# Include naming hint on invalid names.
+include-naming-hint=no
+
+# Naming styles for inline iteration variables.
+inlinevar-naming-style=any
+
+# Regular expressions for naming (empty to use styles above).
+# argument-rgx=
+# attr-rgx=
+# variable-rgx=
+# function-rgx=
+# method-rgx=
+# module-rgx=
+# class-rgx=
+# class-const-rgx=
+# const-rgx=
+
+
+[CLASSES]
+
+# Methods that assign instance attributes.
+defining-attr-methods=__init__,__new__,setUp,asyncSetUp,__post_init__
+
+# Exclude protected attribute names from warnings.
+exclude-protected=_asdict,_fields,_replace,_source,_make,os._exit
+
+# Valid first argument names for classmethods and metaclass classmethods.
+valid-classmethod-first-arg=cls
+valid-metaclass-classmethod-first-arg=mcs
+
+
+[DESIGN]
+
+# Max arguments per method/function.
+max-args=5
+
+# Max attributes per class.
+max-attributes=7
+
+# Max boolean expressions in if statements.
+max-bool-expr=5
+
+# Max branches per function/method.
+max-branches=12
+
+# Max locals per function/method.
+max-locals=15
+
+# Max parents per class.
+max-parents=7
+
+# Max positional arguments per function/method.
+max-positional-arguments=5
+
+# Max public methods per class.
+max-public-methods=20
+
+# Max return/yield per function/method.
+max-returns=6
+
+# Max statements per function/method.
+max-statements=50
+
+# Min public methods per class.
+min-public-methods=2
+
+
+[EXCEPTIONS]
+
+# Exceptions that emit warnings when caught.
+overgeneral-exceptions=builtins.BaseException,builtins.Exception
+
+
+[FORMAT]
+
+# Max characters per line.
+max-line-length=100
+
+# Allow URL lines longer than max-line-length.
+ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+
+# Indentation after parens.
+indent-after-paren=4
+
+# Indentation string (4 spaces).
+indent-string='    '
+
+# Max lines per module.
+max-module-lines=1000
+
+# Allow single line class statements only if body contains a single statement.
+single-line-class-stmt=no
+
+# Allow single line if statements without else.
+single-line-if-stmt=no
+
+
+[IMPORTS]
+
+# Allow imports at any level.
+allow-any-import-level=
+
+# Allow explicit reexports by alias from __init__.
+allow-reexport-from-package=no
+
+# Allow wildcard imports from modules with __all__.
+allow-wildcard-with-all=no
+
+# Deprecated modules to avoid.
+deprecated-modules=
+
+# Known standard libraries (leave empty to auto-detect).
+known-standard-library=
+
+# Known third party libraries.
+known-third-party=enchant
+
+# Preferred modules mapping.
+preferred-modules=
+
+
+[LOGGING]
+
+# Logging format style (old: %, new: {}).
+logging-format-style=old
+
+# Modules to check for logging string format.
+logging-modules=logging
+
+
+[MESSAGES CONTROL]
+
+# Confidence levels to show warnings for.
+confidence=HIGH,CONTROL_FLOW,INFERENCE,INFERENCE_FAILURE,UNDEFINED
