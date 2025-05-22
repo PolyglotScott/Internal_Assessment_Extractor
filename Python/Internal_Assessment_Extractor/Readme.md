@@ -1,4 +1,4 @@
-# internall\_assessment\_extractor
+# internal\_assessment\_extractor
 
 <!-- Project Badges -->
 <p align="center">
@@ -70,7 +70,7 @@ This project automates the extraction of assessment questions, answers, and mark
 
 ## Project Structure
 
-internall_assessment_extractor/  
+internal_assessment_extractor/  
 ├── docs/                          # Documentation files (user guides, developer notes, troubleshooting, technical reference)  
 │   ├── developer_notes.md  
 │   ├── technical_reference.md  
@@ -108,13 +108,21 @@ internall_assessment_extractor/
 
 * Python 3.8 or later
 * pip package manager
+* Microsoft Word (for DOCX file handling)
+* Basic knowledge of Python and command line usage
+* Familiarity with pandas for data manipulation (optional but helpful)
+* Familiarity with Microsoft Word for document formatting and export
+* Familiarity with Git for version control and collaboration (optional)
+* Familiarity with virtual environments (optional but recommended for dependency management)
 
 ### Setup
 
 Clone the repository:
 
 `git clone https://github.com/PolyglotScott/internal_assessment_extractor.git`
-`cd internall_assessment_extractor`
+`cd internal_assessment_extractor`
+`git checkout main`
+`git pull origin main`
 
 Create a virtual environment (optional but recommended):
 
@@ -125,6 +133,8 @@ Create a virtual environment (optional but recommended):
 Install dependencies:
 
 `pip install -r requirements.txt`
+`pip install python-docx pandas`
+`pip install openpyxl` (if using Excel files)
 
 ---
 
@@ -135,6 +145,11 @@ Install dependencies:
 To extract questions and answers from a DOCX file:
 
 `python src/parser.py --input path/to/input.docx`
+*Note:* Replace `path/to/input.docx` with the actual path to your DOCX file. The script will parse the document, extract questions and answers, and save them in a structured format.
+*Example:*
+```bash
+python src/parser.py --input input/input_document.docx
+```
 
 This will output a pandas DataFrame preview and store the extracted data for further processing.
 
@@ -151,6 +166,8 @@ After parsing, export the data with formatting similar to your assessment layout
 * Interactive file browsing GUI
 * Direct printing from script
 * CI/CD toggles for automation or manual control
+* Integration with other tools or platforms (e.g., Jupyter Notebooks, web applications)
+* Additional export formats (e.g., PDF, HTML)
 
 ---
 
@@ -161,8 +178,11 @@ Sensitive and private files (e.g., input DOCX containing proprietary content or 
 * `input/*.docx`
 * `output/*`
 * Any environment or credential files
+* Any other files containing sensitive information
+*Note:* The `input/` folder is provided for your convenience, but it should be used with caution. If you need to share the repository, consider using sample files or dummy data instead of real documents.
 
 This practice maintains your privacy and allows you to showcase your code publicly without exposing confidential material.
+**If you need to share sensitive files, consider using a secure file-sharing service or encrypting the files before sharing. Always follow your organization's data protection policies when handling sensitive information.*
 
 ---
 
@@ -174,22 +194,27 @@ Contributions are welcome! Please:
 * Create a feature branch (`git checkout -b feature/my-feature`)
 * Commit your changes (`git commit -m 'Add new feature'`)
 * Push to the branch (`git push origin feature/my-feature`)
-* Open a Pull Request
+* Open a Pull Request (`git pull request`)
+* Ensure your code adheres to the project's coding standards and includes appropriate tests
 
 ---
 
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+The MIT License is a permissive free software license that allows for reuse within proprietary software, provided that all copies include a copy of the original MIT License and copyright notice. This means you can use, modify, and distribute the code as long as you include the original license.
+The full text of the MIT License is included in the LICENSE.txt file in this repository.
 
 ---
 
 ## Contact
 
 Scott Maxwell
+Polyglot Scott
+LinkedIn: [PolyglotScott](https://www.linkedin.com/in/polyglotscott/)
 GitHub: [PolyglotScott](https://github.com/PolyglotScott)
 Email: [scott.maxwell.polyglot@gmail.com](mailto:scott.maxwell.polyglot@gmail.com)
 
 ---
 
-*Thank you for checking out internall\_assessment\_extractor! Feel free to explore, use, and contribute.*
+*Thank you for checking out internal\_assessment\_extractor! Feel free to explore, use, and contribute.*
