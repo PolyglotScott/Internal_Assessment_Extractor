@@ -1,4 +1,4 @@
-# internal\_assessment\_extractor
+# Internal_Assessment_Extractor
 
 <!-- Project Badges -->
 <p align="center">
@@ -28,7 +28,6 @@
   <!-- Status -->
   <img alt="Project Status" src="https://img.shields.io/badge/status-WIP-yellow?style=for-the-badge">
 </p>
-
 
 A Python-based tool for extracting assessment questions and answers from structured Microsoft Word documents. This project parses facilitator guides to generate assessment and marking guides, enabling easier processing and export of assessment data.
 
@@ -61,7 +60,6 @@ This project automates the extraction of assessment questions, answers, and mark
 * Aggregates extracted content into structured pandas DataFrames.
 * Supports exporting results into Word documents with formatting mimicking original assessment layouts.
 * Future planned features include:
-
   * File browser GUI for local file selection.
   * Printing capabilities.
   * Toggleable automation for CI/CD pipelines.
@@ -89,16 +87,16 @@ internal_assessment_extractor/
 │   └── utils_test.py  
 ├── .gitignore                   # Git ignore file to exclude private inputs and environment files  
 ├── DISCLAIMER.MD                # Disclaimer for the project  
-├── LICENSE.txt                 # Project license file (MIT)  
-├── Readme.md                   # This file (consider renaming to README.md)  
-├── requirements.txt            # Python dependencies  
+├── LICENSE.txt                  # Project license file (MIT)  
+├── README.md                    # This file  
+├── requirements.txt             # Python dependencies  
 
 * **src/parser.py**: Contains logic for reading DOCX files, extracting styled headings, questions, and answers.  
 * **src/exporter.py**: Contains functions to export DataFrame content to a Word document with formatting matching assessment layouts.  
 * **src/utils.py**: Utility functions to support parsing and formatting operations.  
 * **.gitignore**: Configured to ignore sensitive or private input files and environment settings to protect user privacy.  
 * **requirements.txt**: Lists required Python packages (`python-docx`, `pandas`, etc.) for easy environment setup.  
-* **sample_input.docx** (in `input/` folder): An optional placeholder to demonstrate the expected input format (should be kept out of the repository if containing private data).  
+* **sample_input.docx** (in `input/` folder): An optional placeholder to demonstrate the expected input format (should be kept out of the repository if it contains private data).  
 
 ---
 
@@ -119,22 +117,30 @@ internal_assessment_extractor/
 
 Clone the repository:
 
-`git clone https://github.com/PolyglotScott/internal_assessment_extractor.git`
-`cd internal_assessment_extractor`
-`git checkout main`
-`git pull origin main`
+```bash
+git clone https://github.com/PolyglotScott/internal_assessment_extractor.git
+cd internal_assessment_extractor
+git checkout main
+git pull origin main
+```
 
 Create a virtual environment (optional but recommended):
 
-`python -m venv venv`
-`source venv/bin/activate`  (macOS/Linux)
-`venv\Scripts\activate`     (Windows)
+```bash
+python -m venv venv
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+```
 
 Install dependencies:
 
-`pip install -r requirements.txt`
-`pip install python-docx pandas`
-`pip install openpyxl` (if using Excel files)
+```bash
+pip install -r requirements.txt
+pip install python-docx pandas
+pip install openpyxl  # if using Excel files
+```
 
 ---
 
@@ -144,8 +150,11 @@ Install dependencies:
 
 To extract questions and answers from a DOCX file:
 
-`python src/parser.py --input path/to/input.docx`
+```bash
+python src/parser.py --input path/to/input.docx
+```
 *Note:* Replace `path/to/input.docx` with the actual path to your DOCX file. The script will parse the document, extract questions and answers, and save them in a structured format.
+
 *Example:*
 ```bash
 python src/parser.py --input input/input_document.docx
@@ -157,7 +166,9 @@ This will output a pandas DataFrame preview and store the extracted data for fur
 
 After parsing, export the data with formatting similar to your assessment layout:
 
-`python src/exporter.py --data path/to/extracted_data.pkl --output path/to/output.docx`
+```bash
+python src/exporter.py --data path/to/extracted_data.pkl --output path/to/output.docx
+```
 
 *Note:* You may want to test the parsing step first, then export once you confirm data correctness.
 
@@ -179,10 +190,11 @@ Sensitive and private files (e.g., input DOCX containing proprietary content or 
 * `output/*`
 * Any environment or credential files
 * Any other files containing sensitive information
+
 *Note:* The `input/` folder is provided for your convenience, but it should be used with caution. If you need to share the repository, consider using sample files or dummy data instead of real documents.
 
 This practice maintains your privacy and allows you to showcase your code publicly without exposing confidential material.
-**If you need to share sensitive files, consider using a secure file-sharing service or encrypting the files before sharing. Always follow your organization's data protection policies when handling sensitive information.*
+**If you need to share sensitive files, consider using a secure file-sharing service or encrypting the files before sharing. Always follow your organization's data protection policies when handling sensitive information.**
 
 ---
 
@@ -194,7 +206,7 @@ Contributions are welcome! Please:
 * Create a feature branch (`git checkout -b feature/my-feature`)
 * Commit your changes (`git commit -m 'Add new feature'`)
 * Push to the branch (`git push origin feature/my-feature`)
-* Open a Pull Request (`git pull request`)
+* Open a Pull Request
 * Ensure your code adheres to the project's coding standards and includes appropriate tests
 
 ---
@@ -209,12 +221,12 @@ The full text of the MIT License is included in the LICENSE.txt file in this rep
 
 ## Contact
 
-Scott Maxwell
-Polyglot Scott
-LinkedIn: [PolyglotScott](https://www.linkedin.com/in/polyglotscott/)
-GitHub: [PolyglotScott](https://github.com/PolyglotScott)
+Scott Maxwell  
+Polyglot Scott  
+LinkedIn: [PolyglotScott](https://www.linkedin.com/in/polyglotscott/)  
+GitHub: [PolyglotScott](https://github.com/PolyglotScott)  
 Email: [scott.maxwell.polyglot@gmail.com](mailto:scott.maxwell.polyglot@gmail.com)
 
 ---
 
-*Thank you for checking out internal\_assessment\_extractor! Feel free to explore, use, and contribute.*
+*Thank you for checking out internal_assessment_extractor! Feel free to explore, use, and contribute.*
