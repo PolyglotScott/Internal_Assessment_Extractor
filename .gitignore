@@ -2,6 +2,7 @@
 # These folders may contain sensitive or large files not suitable for version control
 input/
 output/
+templates/
 
 # Ignore all Microsoft Word documents by default to protect private data
 # But explicitly keep important templates and sample output DOCX files for reference

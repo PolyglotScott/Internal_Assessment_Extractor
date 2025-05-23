@@ -4,7 +4,6 @@ import unittest
 
 class TestDocParser(unittest.TestCase):
     """Placeholder test case for doc_parser."""
-
     def test_placeholder(self):
         """Placeholder test."""
         self.assertTrue(True)

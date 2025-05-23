@@ -1,20 +1,36 @@
-"""
-exporter.py
-
-Handles exporting parsed and/or analyzed data to various formats (Word, Excel, CSV, etc.).
-"""
+"""Exporter module for saving DataFrames to Word and Excel formats."""
 
 import pandas as pd
+from docx import Document  # Move import to top-level
 
-def export_to_word(df, output_path):
+def export_to_word(df: pd.DataFrame, output_path):
     """
-    Exports the DataFrame to a Word document.
-    """
-    # Placeholder: Implement export logic here
-    pass
+    Export the DataFrame to a Word document.
 
-def export_to_excel(df, output_path):
+    Args:
+        df (pd.DataFrame): The DataFrame to export.
+        output_path (str or Path): The output file path.
     """
-    Exports the DataFrame to an Excel file.
+    doc = Document()
+    table = doc.add_table(rows=1, cols=len(df.columns))
+    hdr_cells = table.rows[0].cells
+    for i, col in enumerate(df.columns):
+        hdr_cells[i].text = str(col)
+
+    for _, row in df.iterrows():
+        row_cells = table.add_row().cells
+        for i, item in enumerate(row):
+            row_cells[i].text = str(item)
+
+    doc.save(str(output_path))
+
+
+def export_to_excel(df: pd.DataFrame, output_path):
     """
-    df.to_excel(output_path, index=False)
+    Export the DataFrame to an Excel file.
+
+    Args:
+        df (pd.DataFrame): The DataFrame to export.
+        output_path (str or Path): The output file path.
+    """
+    df.to_excel(str(output_path), index=False)
