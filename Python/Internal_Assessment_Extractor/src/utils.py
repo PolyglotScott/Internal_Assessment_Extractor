@@ -114,3 +114,10 @@ def log_error(message: str) -> None:
         message (str): The message to log.
     """
     logger.error("%s", message)
+
+
+def setup_logging(level=logging.INFO):
+    logging.basicConfig(
+        level=level,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
