@@ -189,25 +189,25 @@ if __name__ == "__main__":
 
     # Determine which file to use
     if args.input:
-        input_doc_path = os.path.abspath(args.input)
+        selected_doc_path = os.path.abspath(args.input)
     elif docx_files:
-        input_doc_path = str(docx_files[0])
-        print(f"No --input provided. Using: {input_doc_path}")
+        selected_doc_path = str(docx_files[0])  # pylint: disable=invalid-name
+        print(f"No --input provided. Using: {selected_doc_path}")
     else:
         logging.error("No DOCX files found in %s", input_dir)
         print(f"Error: No DOCX files found in the input directory: {input_dir}")
         sys.exit(1)
 
-    if not os.path.isfile(input_doc_path):
-        logging.error("Input file not found: %s", input_doc_path)
-        print(f"Error: Input file not found: {input_doc_path}")
+    if not os.path.isfile(selected_doc_path):
+        logging.error("Input file not found: %s", selected_doc_path)
+        print(f"Error: Input file not found: {selected_doc_path}")
         sys.exit(1)
 
     try:
-        df_questions = parse_document(input_doc_path)
+        df_questions = parse_document(selected_doc_path)
         print("DataFrame Summary:")
         print(df_questions.info())
         print(df_questions.head(15))
-    except Exception as exc:
+    except (OSError, ValueError) as exc:
         logging.error("An error occurred during parsing: %s", exc)
         print(f"An error occurred during parsing: {exc}")

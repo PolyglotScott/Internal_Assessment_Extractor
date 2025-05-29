@@ -18,9 +18,12 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
 
 def clean_text_column(df: pd.DataFrame, column: str) -> pd.DataFrame:
     """
-    Clean a specific text column in the DataFrame by removing extra spaces and normalizing whitespace.
+    Clean a specific text column in the DataFrame by removing extra spaces 
+    and normalizing whitespace.
     """
-    df[column] = df[column].astype(str).apply(lambda x: re.sub(r'\s+', ' ', x.strip()))
+    df[column] = df[column].astype(str).apply(
+        lambda x: re.sub(r'\s+', ' ', x.strip())
+    )
     return df
 
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -64,7 +67,8 @@ def _clean_row(row):
 
 def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Cleans and preprocesses the DataFrame by stripping whitespace and cleaning question text using multiprocessing.
+    Cleans and preprocesses the DataFrame by stripping whitespace and cleaning question text using
+    multiprocessing.
     """
     required_columns = ["Questions", "Answer"]
     for column in required_columns:
@@ -84,3 +88,22 @@ def validate_columns(df: pd.DataFrame, required_columns: list) -> None:
     missing_columns = [col for col in required_columns if col not in df.columns]
     if missing_columns:
         raise KeyError(f"Missing required columns: {', '.join(missing_columns)}")
+def clean_and_validate_data(df: pd.DataFrame, required_columns: list) -> pd.DataFrame:
+    """
+    Clean and validate the DataFrame, ensuring all required columns 
+    are present and cleaned.
+    """
+    df = clean_data(df)
+    validate_columns(df, required_columns)
+    df = preprocess_data(df)
+    return df
+def clean_and_validate_data_parallel(dfs: list, required_columns: list) -> list:
+    """
+    Clean and validate multiple DataFrames in parallel, ensuring all required columns 
+    are present and cleaned.
+    """
+    with ProcessPoolExecutor() as executor:
+        cleaned_dfs = list(
+            executor.map(lambda df: clean_and_validate_data(df, required_columns), dfs)
+        )
+    return cleaned_dfs
